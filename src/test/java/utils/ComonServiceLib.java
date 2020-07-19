@@ -32,11 +32,23 @@ import static io.restassured.module.jsv.JsonSchemaValidator.*;
 import static io.restassured.config.EncoderConfig.encoderConfig;
 
 /***
- * author : Subodh M
- * This is created for Everon Test
+ * author : Subodh M This is created for Everon Test
  */
 
 public class ComonServiceLib {
+
+	private final RestAssuredConfig restAssuredConfig = RestAssured.config()
+			.encoderConfig(encoderConfig().defaultContentCharset("UTF-8"));
+	protected TestNGCucumberRunner testNGCucumberRunner;
+	public Response response;
+	public RequestSpecification request;
+	String cwd = System.getProperty("user.dir");
+
+	public static String baseURL;
+	public String URLParam = "";
+	public String jsonRequestBody;
+	public String endPoint;
+	public String queryParam = "";
 
 	// Sets base path
 	public void setBasePath(String basePathTerm) {
@@ -174,16 +186,4 @@ public class ComonServiceLib {
 
 	}
 
-	private final RestAssuredConfig restAssuredConfig = RestAssured.config()
-			.encoderConfig(encoderConfig().defaultContentCharset("UTF-8"));
-	protected TestNGCucumberRunner testNGCucumberRunner;
-	public Response response;
-	public RequestSpecification request;
-	String cwd = System.getProperty("user.dir");
-
-	public static String baseURL;
-	public String URLParam = "";
-	public String jsonRequestBody;
-	public String endPoint;
-	public String queryParam = "";
 }

@@ -1,14 +1,9 @@
-/***
- * author : Subodh M
- * This is created for Everon Test
- */
-
 package pages;
 
-/**
- * @author basha
- *
+/***
+ * author : Subodh M This is created for Everon Test
  */
+
 public class PetNotFound {
 
 	private Integer code;

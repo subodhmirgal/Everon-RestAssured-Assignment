@@ -1,8 +1,3 @@
-/***
- * author : Subodh M
- * This is created for Everon Test
- */
-
 package pages;
 
 import java.io.File;
@@ -21,11 +16,21 @@ import com.google.gson.JsonParser;
 import io.restassured.mapper.ObjectMapperType;
 import io.restassured.response.Response;
 
-/**
- * @author basha
- *
+/***
+ * author : Subodh M This is created for Everon Test
  */
+
 public class Pet {
+
+	Gson gson;
+	String cwd = System.getProperty("user.dir");
+	PetResponse resp;
+	PetNotFound notFound;
+	ComonServiceLib base;
+	int id;
+	String status;
+	Pet pet;
+
 	/**
 	 * @return the id
 	 */
@@ -148,17 +153,4 @@ public class Pet {
 		gson = new Gson();
 	}
 
-//	public Pet(int id, String name) {
-//		this.id = id;
-//		this.name = name;
-//		base = new Base();
-//	}
-	Gson gson;
-	String cwd = System.getProperty("user.dir");
-	PetResponse resp;
-	PetNotFound notFound;
-	ComonServiceLib base;
-	int id;
-	String status;
-	Pet pet;
 }

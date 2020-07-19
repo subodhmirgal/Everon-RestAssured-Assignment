@@ -14,11 +14,13 @@ import utils.ComonServiceLib;
 import utils.PetException;
 
 /***
- * author : Subodh M
- * This is created for Everon Test
+ * author : Subodh M This is created for Everon Test
  */
 
 public class PetStepDef extends ComonServiceLib {
+
+	String[] status = { "sold", "available", "pending" };
+	Pet pet;
 
 	@Given("^user set param (.*)")
 	public void userSetContentJson(String param) {
@@ -65,6 +67,7 @@ public class PetStepDef extends ComonServiceLib {
 			pet.validateResponse(responseJson, response);
 		}
 	}
+
 	@Then("^validate error response$")
 	public void validate_error_response(DataTable responseJsons) {
 		List<Map<String, String>> responseJsonss = responseJsons.asMaps(String.class, String.class);
@@ -72,6 +75,7 @@ public class PetStepDef extends ComonServiceLib {
 			pet.validateErrResponse(responseJson, response);
 		}
 	}
+
 	@Then("^validate expected response$")
 	public void validate_expected_response(DataTable expected) throws PetException {
 		List<Map<String, String>> jsonschema = expected.asMaps(String.class, String.class);
@@ -89,6 +93,4 @@ public class PetStepDef extends ComonServiceLib {
 		pet = new Pet(getRandom(), getRandomStatus(status));
 	}
 
-	String[] status = { "sold", "available", "pending" };
-	Pet pet;
 }
