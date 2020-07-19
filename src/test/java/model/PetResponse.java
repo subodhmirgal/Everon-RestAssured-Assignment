@@ -3,7 +3,7 @@
  * This is created for Everon Test
  */
 
-package pages;
+package model;
 
 public class PetResponse {
 

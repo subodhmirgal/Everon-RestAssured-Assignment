@@ -1,4 +1,4 @@
-package pages;
+package model;
 
 /***
  * author : Subodh M This is created for Everon Test

@@ -1,16 +1,22 @@
-package pages;
+package model;
 
 /***
- * author : Subodh M This is created for Everon Test
+ * author : Subodh M
+ * This is created for Everon Test
  */
 
-public class Tag {
+public class Category {
 
 	private Integer id;
 	private String name;
 
-	public Integer getId() {
+	public int getId() {
 		return id;
+	}
+
+	@Override
+	public String toString() {
+		return "\"category\":{\"id\":" + id + ",\"name\":\"" + name + "\"}";
 	}
 
 	public void setId(Integer id) {
@@ -23,10 +29,6 @@ public class Tag {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String toString() {
-		return "{\"id\":" + id + ",\"name\":" + "\"" + name + "\"}";
 	}
 
 }

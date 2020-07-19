@@ -9,7 +9,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
-import pages.Pet;
+import model.Pet;
 import utils.ComonServiceLib;
 import utils.PetException;
 
