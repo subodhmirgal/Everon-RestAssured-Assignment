@@ -1,0 +1,211 @@
+<html>
+<head>
+<title>TestNG:  Sanity</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Sanity</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>3/2/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Jul 19 11:16:50 CEST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>5 seconds (5560 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='MyRunner.TestRunner.RunScenario()'><b>RunScenario</b><br>Test class: MyRunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "", "PET CRUD"<br/>
+<a href="#Output-1599208706" onClick='toggleBox("Output-1599208706", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1599208706" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1599208706">
+<div "result">user set param &#x2F;pet&#x2F;3310 (PASSED : 0s)</div><br/>
+<div "result">user make GET call (PASSED : 1s)</div><br/>
+<div "result">validate the status code as 200 (FAILED : 0s)</div><br/>
+<div "result">validate json schema (SKIPPED)</div><br/>
+<div "result">validate expected response (SKIPPED)</div><br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: expected [200] but found [404]
+	at utils.ComonServiceLib.validateStatusCode(ComonServiceLib.java:153)
+	at stepDefinitions.PetStepDef.validate_the_status_code(PetStepDef.java:52)
+	at ✽.validate the status code as 200(src/test/java/Features/petCRUD.feature:8)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1599208706", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1599208706'><pre>java.lang.AssertionError: expected [200] but found [404]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:652)
+	at org.testng.Assert.assertEquals(Assert.java:662)
+	at utils.ComonServiceLib.validateStatusCode(ComonServiceLib.java:153)
+	at stepDefinitions.PetStepDef.validate_the_status_code(PetStepDef.java:52)
+	at ✽.validate the status code as 200(src/test/java/Features/petCRUD.feature:8)
+</pre></div></td>
+<td>1</td>
+<td>MyRunner.TestRunner@293a5bf6</td></tr>
+<tr>
+<td title='MyRunner.TestRunner.RunScenario()'><b>RunScenario</b><br>Test class: MyRunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "", "PET CRUD"<br/>
+<a href="#Output-1754580265" onClick='toggleBox("Output-1754580265", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1754580265" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1754580265">
+<div "result">user set param &#x2F;pet (PASSED : 0s)</div><br/>
+<div "result">user set the request body with Dyanmic values in resquest body and expected response (PASSED : 0s)</div><br/>
+<div "result">user make POST call (PASSED : 0s)</div><br/>
+<div "result">validate the status code as 200 (PASSED : 0s)</div><br/>
+<div "result">validate json schema (PASSED : 0s)</div><br/>
+<div "result">validate response (PASSED : 0s)</div><br/>
+<div "result">validate expected response (PASSED : 0s)</div><br/>
+<div "result">user set param &#x2F;pet&#x2F;ExistingID (PASSED : 0s)</div><br/>
+<div "result">user make DELETE call (PASSED : 0s)</div><br/>
+<div "result">validate the status code as 200 (PASSED : 0s)</div><br/>
+<div "result">validate expected response is empty (FAILED : 0s)</div><br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: expected [] but found [{&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;4890&quot;}]
+	at stepDefinitions.PetStepDef.validate_expected_response(PetStepDef.java:87)
+	at ✽.validate expected response is empty(src/test/java/Features/petCRUD.feature:83)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1754580265", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1754580265'><pre>java.lang.AssertionError: expected [] but found [{&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;4890&quot;}]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:453)
+	at org.testng.Assert.assertEquals(Assert.java:463)
+	at stepDefinitions.PetStepDef.validate_expected_response(PetStepDef.java:87)
+	at ✽.validate expected response is empty(src/test/java/Features/petCRUD.feature:83)
+</pre></div></td>
+<td>1</td>
+<td>MyRunner.TestRunner@293a5bf6</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='MyRunner.TestRunner.RunScenario()'><b>RunScenario</b><br>Test class: MyRunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "", "PET CRUD"<br/>
+<a href="#Output-585681197" onClick='toggleBox("Output-585681197", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-585681197" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-585681197">
+<div "result">user set param &#x2F;pet (PASSED : 0s)</div><br/>
+<div "result">user set the request body with Dyanmic values in resquest body and expected response (PASSED : 0s)</div><br/>
+<div "result">user make POST call (PASSED : 0s)</div><br/>
+<div "result">validate the status code as 200 (PASSED : 0s)</div><br/>
+<div "result">validate json schema (PASSED : 0s)</div><br/>
+<div "result">validate response (PASSED : 0s)</div><br/>
+<div "result">validate expected response (PASSED : 0s)</div><br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>MyRunner.TestRunner@293a5bf6</td></tr>
+<tr>
+<td title='MyRunner.TestRunner.RunScenario()'><b>RunScenario</b><br>Test class: MyRunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "", "PET CRUD"<br/>
+<a href="#Output-189810198" onClick='toggleBox("Output-189810198", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-189810198" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-189810198">
+<div "result">user set param &#x2F;pet (PASSED : 0s)</div><br/>
+<div "result">user set the request body with Dyanmic values in resquest body and expected response (PASSED : 0s)</div><br/>
+<div "result">user make PUT call (PASSED : 0s)</div><br/>
+<div "result">validate the status code as 200 (PASSED : 0s)</div><br/>
+<div "result">validate json schema (PASSED : 0s)</div><br/>
+<div "result">validate response (PASSED : 0s)</div><br/>
+<div "result">validate expected response (PASSED : 0s)</div><br/>
+<div "result">user set param &#x2F;pet&#x2F;ExistingID (PASSED : 0s)</div><br/>
+<div "result">user make GET call (PASSED : 0s)</div><br/>
+<div "result">validate the status code as 200 (PASSED : 0s)</div><br/>
+<div "result">validate json schema (PASSED : 0s)</div><br/>
+<div "result">validate expected response (PASSED : 0s)</div><br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>MyRunner.TestRunner@293a5bf6</td></tr>
+<tr>
+<td title='MyRunner.TestRunner.RunScenario()'><b>RunScenario</b><br>Test class: MyRunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "", "PET CRUD"<br/>
+<a href="#Output-1796983729" onClick='toggleBox("Output-1796983729", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1796983729" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1796983729">
+<div "result">user set param &#x2F;pet&#x2F;121212121345534 (PASSED : 0s)</div><br/>
+<div "result">user make GET call (PASSED : 0s)</div><br/>
+<div "result">validate the status code as 404 (PASSED : 0s)</div><br/>
+<div "result">validate json schema (PASSED : 0s)</div><br/>
+<div "result">validate error response (PASSED : 0s)</div><br/>
+<div "result">validate expected response (PASSED : 0s)</div><br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>MyRunner.TestRunner@293a5bf6</td></tr>
+</table><p>
+</body>
+</html>

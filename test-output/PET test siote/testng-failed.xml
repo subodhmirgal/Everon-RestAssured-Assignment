@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" configfailurepolicy="continue" guice-stage="DEVELOPMENT" name="Failed suite [PET test siote]" parallel="tests">
+  <test thread-count="2" name="Sanity(failed)" parallel="tests">
+    <parameter name="baseURL" value="https://petstore.swagger.io/v2"/>
+    <classes>
+      <class name="MyRunner.TestRunner">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="RunScenario" invocation-numbers="0 3"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- MyRunner.TestRunner -->
+    </classes>
+  </test> <!-- Sanity(failed) -->
+</suite> <!-- Failed suite [PET test siote] -->

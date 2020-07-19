@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PET Smoke test" verbose="1" thread-count="2"
+	configfailurepolicy="continue" parallel="tests">
+
+	<test name="Smoke" annotations="JDK" preserve-order="true">
+
+		<parameter name="baseURL"
+			value="https://petstore.swagger.io/v2" />
+		<classes>
+			<class name="MyRunner.TestRunner" />
+		</classes>
+	</test>
+</suite>
