@@ -1,19 +1,8 @@
 Feature: EVERON - PET CRUD 
 
-@smoke
-Scenario: Test_001 - Get Pet Details
-	Given user set param /pet/9870
-	When user make GET call 
-	Then validate the status code as 200 
-	And validate json schema 
-		|jsonSchemaValue|
-		|Pet/schemas/pet|
-	And validate expected response 
-		|expectedResponse	|
-		|Pet/getPetExpected	|
 		
 @smoke
-Scenario: Test_002 - Create New Pet
+Scenario: Test_001 - Create New Pet
 	Given user set param /pet 
 	And user set the request body with Dyanmic values in resquest body and expected response 
 		|RequestBody  |id	 |status	  |expectedResponse|
@@ -31,7 +20,7 @@ Scenario: Test_002 - Create New Pet
 		|Pet/createPetExpected|
 		
 @smoke
-Scenario: Test_003 - Update existing Pet
+Scenario: Test_002 - GET Pet Details & Update existing Pet
 	Update and Get the pet details
 	Given user set param /pet 
 	And user set the request body with Dyanmic values in resquest body and expected response 
@@ -59,7 +48,7 @@ Scenario: Test_003 - Update existing Pet
 		|Pet/UpdatePetExpected|	
 		
 @smoke		
-Scenario: Test_004 - Create & Delete Pet details
+Scenario: Test_003 - Create & Delete Pet details
 	Given user set param /pet 
 	And user set the request body with Dyanmic values in resquest body and expected response 
 		|RequestBody  |id	 |status	  |expectedResponse|
@@ -80,7 +69,7 @@ Scenario: Test_004 - Create & Delete Pet details
 	Then validate the status code as 200
 	
 @smoke
-Scenario: Test_005 - verify Error JSON for Pet Not Found
+Scenario: Test_004 - verify Error JSON for Pet Not Found
 	Given user set param /pet/000080010100101 
 	When user make GET call 
 	Then validate the status code as 404 

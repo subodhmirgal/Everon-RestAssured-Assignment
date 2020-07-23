@@ -10,14 +10,15 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
 import model.Pet;
-import utils.ComonServiceLib;
+import utils.BaseTest;
 import utils.PetException;
 
 /***
  * author : Subodh M This is created for Everon Test
+ * All Stepdefinitions are written here
  */
 
-public class PetStepDef extends ComonServiceLib {
+public class PetStepDef extends BaseTest {
 
 	String[] status = { "sold", "available", "pending" };
 	Pet pet;

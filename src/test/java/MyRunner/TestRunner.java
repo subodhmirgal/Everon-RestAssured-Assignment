@@ -12,13 +12,13 @@ import org.testng.annotations.Test;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.PickleEventWrapper;
-import utils.ComonServiceLib;
+import utils.BaseTest;
 
 @CucumberOptions(features = "src/test/java/Features", strict = true, glue = { "stepDefinitions" }, 
 tags = {"@smoke" }, 
-plugin = { "pretty", "html:target/cucumber-reports/cucumber-pretty" })
+plugin = { "pretty", "html:target/cucumber-reports/cucumber-pretty","json:target/cucumber-reports/CucumberTestReport.json" })
 @Listeners({ FailListener.class })
-public class TestRunner extends ComonServiceLib {
+public class TestRunner extends BaseTest {
 
 	@Test(groups = "cucumber", description = "Runs Cucumber Scenarios", dataProvider = "scenarios")
 	public void RunScenario(PickleEventWrapper pickleWrapper, CucumberFeatureWrapper featureWrapper) throws Throwable {

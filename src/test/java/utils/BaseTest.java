@@ -33,9 +33,10 @@ import static io.restassured.config.EncoderConfig.encoderConfig;
 
 /***
  * author : Subodh M This is created for Everon Test
+ * This BaseTest Class use for common utils
  */
 
-public class ComonServiceLib {
+public class BaseTest {
 
 	private final RestAssuredConfig restAssuredConfig = RestAssured.config()
 			.encoderConfig(encoderConfig().defaultContentCharset("UTF-8"));
@@ -83,7 +84,7 @@ public class ComonServiceLib {
 	}
 
 	public void setBaseURL(String baseURL) {
-		ComonServiceLib.baseURL = baseURL;
+		BaseTest.baseURL = baseURL;
 	}
 
 	public String getqueryParam() {

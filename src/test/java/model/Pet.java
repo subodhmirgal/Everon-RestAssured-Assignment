@@ -5,7 +5,7 @@ import java.util.Map;
 import org.apache.commons.io.FileUtils;
 import org.testng.Assert;
 
-import utils.ComonServiceLib;
+import utils.BaseTest;
 import utils.PetException;
 
 import com.google.gson.Gson;
@@ -26,7 +26,7 @@ public class Pet {
 	String cwd = System.getProperty("user.dir");
 	PetResponse resp;
 	PetNotFound notFound;
-	ComonServiceLib base;
+	BaseTest base;
 	int id;
 	String status;
 	Pet pet;
@@ -148,7 +148,7 @@ public class Pet {
 	public Pet(int id, String status) {
 		this.id = id;
 		this.status = status;
-		base = new ComonServiceLib();
+		base = new BaseTest();
 		resp = new PetResponse();
 		gson = new Gson();
 	}

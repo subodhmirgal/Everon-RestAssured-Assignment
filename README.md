@@ -8,6 +8,7 @@ Project is Built on - <br>
 	*Cucumber<br>
 	*Maven<br>
 	*TestNG<br>
+	*Cucumber Report Location - /Everon-RestAssured-Assignment/target/target/cucumber-reports/advanced-reports/cucumber-html-reports/report-feature_src-test-java-Features-petCRUD-feature_CucumberTestReport.html
 
 
 
