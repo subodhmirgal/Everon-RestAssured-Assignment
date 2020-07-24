@@ -114,7 +114,6 @@ public class Pet {
 	public void validateResponse(Map<String, String> responseJson, Response response) {
 		resp = getPetResponse(response);
 		System.out.println(resp.toString());
-		// System.out.println(resp.toString());
 		Category category = resp.getCategory();
 
 		for (Map.Entry<String, String> entry : responseJson.entrySet()) {
