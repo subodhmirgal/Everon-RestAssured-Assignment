@@ -31,6 +31,14 @@ public class Pet {
 	String status;
 	Pet pet;
 
+	public Pet(int id, String status) {
+		this.id = id;
+		this.status = status;
+		base = new BaseTest();
+		resp = new PetResponse();
+		gson = new Gson();
+	}
+	
 	/**
 	 * @return the id
 	 */
@@ -144,12 +152,6 @@ public class Pet {
 
 	}
 
-	public Pet(int id, String status) {
-		this.id = id;
-		this.status = status;
-		base = new BaseTest();
-		resp = new PetResponse();
-		gson = new Gson();
-	}
+	
 
 }

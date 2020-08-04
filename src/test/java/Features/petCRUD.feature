@@ -4,7 +4,7 @@ Feature: EVERON - PET CRUD
 @smoke
 Scenario: Test_001 - Create New Pet
 	Given user set param /pet 
-	And user set the request body with Dyanmic values in resquest body and expected response 
+	And user set the request body with Dyanmic values in request body and expected response 
 		|RequestBody  |id	 |status	  |expectedResponse|
 		|Pet/petDetail|random|randomStatus|Pet/createPetExpected| 
 	When user make POST call 
@@ -23,7 +23,7 @@ Scenario: Test_001 - Create New Pet
 Scenario: Test_002 - GET Pet Details & Update existing Pet
 	Update and Get the pet details
 	Given user set param /pet 
-	And user set the request body with Dyanmic values in resquest body and expected response 
+	And user set the request body with Dyanmic values in request body and expected response 
 		|RequestBody  			|id	   |status	    |expectedResponse|
 		|Pet/createPetExpected	|random|randomStatus|Pet/UpdatePetExpected| 
 	When user make PUT call 
@@ -50,7 +50,7 @@ Scenario: Test_002 - GET Pet Details & Update existing Pet
 @smoke		
 Scenario: Test_003 - Create & Delete Pet details
 	Given user set param /pet 
-	And user set the request body with Dyanmic values in resquest body and expected response 
+	And user set the request body with Dyanmic values in request body and expected response 
 		|RequestBody  |id	 |status	  |expectedResponse|
 		|Pet/petDetail|random|randomStatus|Pet/createPetExpected| 
 	When user make POST call 

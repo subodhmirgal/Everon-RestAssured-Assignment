@@ -22,7 +22,11 @@ public class PetStepDef extends BaseTest {
 
 	String[] status = { "sold", "available", "pending" };
 	Pet pet;
-
+	
+	public PetStepDef() {
+		pet = new Pet(getRandom(), getRandomStatus(status));
+	}
+	
 	@Given("^user set param (.*)")
 	public void userSetContentJson(String param) {
 		if (param.contains("ExistingID")) {
@@ -33,7 +37,7 @@ public class PetStepDef extends BaseTest {
 		}
 	}
 
-	@Given("^user set the request body with Dyanmic values in resquest body and expected response$")
+	@Given("^user set the request body with Dyanmic values in request body and expected response$")
 	public void user_set_the_request_body(DataTable request_Body) throws PetException {
 
 		List<Map<String, String>> requestbody = request_Body.asMaps(String.class, String.class);
@@ -90,8 +94,6 @@ public class PetStepDef extends BaseTest {
 		Assert.assertEquals(response.getBody().asString(), "");
 	}
 
-	public PetStepDef() {
-		pet = new Pet(getRandom(), getRandomStatus(status));
-	}
+	
 
 }
